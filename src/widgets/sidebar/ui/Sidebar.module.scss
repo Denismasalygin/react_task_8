@@ -1,0 +1,79 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  min-height: 100vh;
+  transition: width 0.2s ease;
+  font-size: 16px;
+}
+
+.collapsed {
+  width: 60px;
+}
+
+.collapseButton {
+  width: 50px;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+  font-size: 30px;
+  background-color: transparent;
+  color: #0000008a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: auto;
+}
+
+.profile {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  align-items: center;
+  column-gap: 16px;
+  min-height: 56px;
+  padding: 16px;
+  overflow: hidden;
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #eaf3ff;
+  color: #1976d2;
+  font-weight: 600;
+}
+
+.profileLabel {
+  font-size: 16px;
+  color: #444444;
+}
+
+.profileLabelHidden {
+  opacity: 0;
+}
+
+.chevron {
+  display: block;
+  transition: transform 0.2s ease;
+  transform: rotate(0deg);
+}
+
+.chevronCollapsed {
+  transform: rotate(180deg);
+}

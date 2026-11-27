@@ -1,0 +1,16 @@
+{
+  "Navigation": {
+    "employees": "Сотрудники",
+    "skills": "Навыки",
+    "languages": "Языки",
+    "resume": "Резюме"
+  },
+  "Profile": {
+    "title": "Профиль"
+  },
+  "LanguageSwitcher": {
+    "label": "Язык",
+    "ru": "Русский",
+    "en": "Английский"
+  }
+}
