@@ -3,8 +3,8 @@
   flex-direction: column;
   width: 200px;
   min-height: 100vh;
-  transition: width 0.2s ease;
-  font-size: 16px;
+  transition: width var(--transition-normal);
+  font-size: var(--font-size-md);
 }
 
 .collapsed {
@@ -16,9 +16,9 @@
   height: 50px;
   border: none;
   cursor: pointer;
-  font-size: 30px;
+  font-size: var(--font-size-collapse-button);
   background-color: transparent;
-  color: #0000008a;
+  color: var(--color-text-muted);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -54,14 +54,14 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: #eaf3ff;
-  color: #1976d2;
-  font-weight: 600;
+  background: var(--color-background-accent);
+  color: var(--color-accent);
+  font-weight: var(--font-weight-semibold);
 }
 
 .profileLabel {
-  font-size: 16px;
-  color: #444444;
+  font-size: var(--font-size-md);
+  color: var(--color-text-secondary);
 }
 
 .profileLabelHidden {
@@ -86,7 +86,7 @@
     min-height: 0;
     position: fixed;
     bottom: 0;
-    box-shadow: 0 -2px 12px #0000000d;
+    box-shadow: var(--shadow-sidebar);
   }
 
   .collapseButton {

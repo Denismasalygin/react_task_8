@@ -1,6 +1,44 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Colors — text */
+  --color-text-primary: #171717;
+  --color-text-secondary: #444444;
+  --color-text-muted: rgba(0, 0, 0, 0.54);
+  --color-text-badge: #333333;
+
+  /* Colors — background */
+  --color-background: #ffffff;
+  --color-background-hover: #f2f2f2;
+  --color-background-badge: #f2f2f2;
+
+  /* Colors — border */
+  --color-border: #e5e5e5;
+
+  /* Colors — accent */
+  --color-accent: #1976d2;
+  --color-background-accent: #eaf3ff;
+
+  /* Colors — navigation */
+  --color-text-active: #2e2e2e;
+  --color-background-hover-subtle: rgba(0, 0, 0, 0.06);
+  --color-background-active: rgba(0, 0, 0, 0.1);
+
+  /* Typography — font size */
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-collapse-button: 30px;
+
+  /* Typography — font weight */
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Effects */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.2s ease;
+
+  /* Shadow */
+  --shadow-sidebar: 0 -2px 12px #0000000d;
 }
 
 html,
@@ -16,8 +54,8 @@ html {
 
 body {
   min-height: 100vh;
-  color: var(--foreground);
-  background: var(--background);
+  color: var(--color-text-primary);
+  background: var(--color-background);
   font-family: Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
