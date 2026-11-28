@@ -1,27 +1,37 @@
 "use client";
 
 import Image from "next/image";
-import { Link, usePathname } from "@/i18n/navigation";
+import clsx from "clsx";
 import { useTranslations } from "next-intl";
+import { Link, usePathname } from "@/i18n/navigation";
+import type { SidebarItemProps } from "@/widgets/sidebar/ui/SidebarItemProps.types";
 import styles from "./SidebarItem.module.scss";
-import { SidebarItemProps } from "@/widgets/sidebar/ui/SidebarItemProps.types";
 
 export default function SidebarItem({ item, translationKey, collapsed }: SidebarItemProps) {
   const t = useTranslations("Navigation");
   const pathname = usePathname();
+
   const isActive = pathname === item.path;
+  const label = t(translationKey);
 
   return (
     <Link
       href={item.path}
-      className={`${styles.item} ${isActive ? styles.active : ""}`}
-      title={collapsed ? t(translationKey) : undefined}
+      className={clsx(styles.item, {
+        [styles.active]: isActive,
+      })}
+      title={collapsed ? label : undefined}
       aria-current={isActive ? "page" : undefined}
     >
-      <Image src={item.icon} alt="" width={24} height={24} />
+      <Image src={item.icon} alt={label} width={24} height={24} />
 
-      <span className={`${styles.label} ${collapsed ? styles.labelCollapsed : ""}`}>
-        {t(translationKey)}
+      <span
+        aria-hidden="true"
+        className={clsx(styles.label, {
+          [styles.labelCollapsed]: collapsed,
+        })}
+      >
+        {label}
       </span>
     </Link>
   );
