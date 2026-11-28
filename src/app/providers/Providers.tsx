@@ -7,7 +7,7 @@ import { ProvidersProps } from "@/app/providers/ProvidersProps.types";
 
 export default function Providers({ children }: ProvidersProps) {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme} defaultMode="light">
       <CssBaseline />
       {children}
     </ThemeProvider>

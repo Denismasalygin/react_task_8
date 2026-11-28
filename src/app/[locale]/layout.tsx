@@ -10,6 +10,7 @@ import "../globals.scss";
 import { LocaleLayoutProps } from "@/app/[locale]/types/LocaleLayoutProps.types";
 import { getLocaleMetadata } from "./metadata";
 import { Metadata } from "next";
+import InitColorSchemeScript from "@mui/material/InitColorSchemeScript";
 
 export async function generateMetadata({
   params,
@@ -32,8 +33,9 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
   setRequestLocale(locale);
 
   return (
-    <html lang={locale}>
+    <html lang={locale} suppressHydrationWarning>
       <body>
+        <InitColorSchemeScript attribute="data" defaultMode="light" />
         <NextIntlClientProvider>
           <AppRouterCacheProvider options={{ enableCssLayer: true }}>
             <Providers>

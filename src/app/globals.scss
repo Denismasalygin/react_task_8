@@ -41,15 +41,39 @@
   --shadow-sidebar: 0 -2px 12px #0000000d;
 }
 
+html[data-dark] {
+  /* Colors — text */
+  --color-text-primary: #f5f5f5;
+  --color-text-secondary: #d1d1d1;
+  --color-text-muted: rgba(255, 255, 255, 0.7);
+  --color-text-badge: #f5f5f5;
+
+  /* Colors — background */
+  --color-background: #121212;
+  --color-background-hover: #2a2a2a;
+  --color-background-badge: #333333;
+
+  /* Colors — border */
+  --color-border: #424242;
+
+  /* Colors — accent */
+  --color-accent: #90caf9;
+  --color-background-accent: #17324d;
+
+  /* Colors — navigation */
+  --color-text-active: #f5f5f5;
+  --color-background-hover-subtle: rgba(255, 255, 255, 0.08);
+  --color-background-active: rgba(255, 255, 255, 0.16);
+
+  /* Shadow */
+  --shadow-sidebar: 0 -2px 12px rgba(0, 0, 0, 0.28);
+}
+
 html,
 body {
   width: 100%;
   min-height: 100%;
   margin: 0;
-}
-
-html {
-  color-scheme: light;
 }
 
 body {
