@@ -1,28 +1,21 @@
-import type { Metadata } from "next";
-import type { ReactNode } from "react";
 import { notFound } from "next/navigation";
-
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v16-appRouter";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
-
 import { routing } from "@/i18n/routing";
 import Providers from "../providers/Providers";
-
-import { Sidebar } from "@/widgets/sidebar";
-
+import { Sidebar, SwipeNavigation } from "@/widgets/sidebar";
 import styles from "./layout.module.scss";
-
 import "../globals.scss";
+import { LocaleLayoutProps } from "@/app/[locale]/types/LocaleLayoutProps.types";
+import { getLocaleMetadata } from "./metadata";
+import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "React Task 8",
-  description: "Система управления сотрудниками",
-};
-
-interface LocaleLayoutProps {
-  children: ReactNode;
-  params: Promise<{ locale: string }>;
+export async function generateMetadata({
+  params,
+}: Pick<LocaleLayoutProps, "params">): Promise<Metadata> {
+  const { locale } = await params;
+  return getLocaleMetadata(locale);
 }
 
 export function generateStaticParams() {
@@ -47,7 +40,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
               <div className={styles.app}>
                 <Sidebar />
 
-                <main className={styles.content}>{children}</main>
+                <SwipeNavigation className={styles.content}>{children}</SwipeNavigation>
               </div>
             </Providers>
           </AppRouterCacheProvider>

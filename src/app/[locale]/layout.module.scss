@@ -9,3 +9,9 @@
   min-width: 0;
   padding: 32px;
 }
+
+@media (max-width: 768px) {
+  .content {
+    touch-action: pan-y;
+  }
+}

@@ -39,3 +39,17 @@
 .labelHidden {
   opacity: 0;
 }
+
+@media (max-width: 768px) {
+  .trigger {
+    flex: 1;
+    justify-content: center;
+    height: 64px;
+    padding: 0;
+    display: flex;
+  }
+
+  .label {
+    display: none;
+  }
+}

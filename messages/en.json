@@ -12,5 +12,9 @@
     "label": "Language",
     "ru": "Russian",
     "en": "English"
+  },
+  "Metadata": {
+    "title": "Employee Management System",
+    "description": "A system for managing employees, their skills and languages."
   }
 }

@@ -1,14 +1,9 @@
 "use client";
 
-import { ReactNode } from "react";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-
 import theme from "./theme";
-
-interface ProvidersProps {
-  children: ReactNode;
-}
+import { ProvidersProps } from "@/app/providers/ProvidersProps.types";
 
 export default function Providers({ children }: ProvidersProps) {
   return (
